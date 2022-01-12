@@ -1,0 +1,72 @@
+.outer-layout {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+        width: 120px;
+        height: 31px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px 28px 16px 0;
+        float: left;
+    }
+
+    
+
+    .header-menu {
+        line-height: 64px
+    }
+
+    nz-avatar {
+        vertical-align: middle;
+    }
+
+    nz-avatar:hover {
+        cursor: pointer;
+    }
+
+    .outer-content {
+        height: 100%;
+        padding: 0 50px;
+        display: flex;
+        flex-direction: column;
+        flex: auto;
+
+        nz-breadcrumb {
+            margin: 16px 0;
+        }
+
+        .inner-content {
+            height: 100%;
+            width: 100%;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: auto;
+            background: #fff;
+        }
+
+        // .inner-layout {
+        //     height: 100%;
+        //     padding: 24px 0;
+        //     background: #fff;
+        //     display: flex;
+        //     flex-direction: column;
+        //     flex: auto;
+
+        //     .inner-content {
+        //         height: 100%;
+        //         padding: 0 24px;
+        //         min-height: 280px;
+        //         display: flex;
+        //         flex-direction: column;
+        //         flex: auto;
+        //     }
+        // }
+    }
+
+    nz-footer {
+        text-align: center;
+    }
+}
