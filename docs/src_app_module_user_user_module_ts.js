@@ -3,7 +3,7 @@
 
 /***/ 1087:
 /*!*****************************************************************!*\
-  !*** ./src/app/component/user/user-info/user-info.component.ts ***!
+  !*** ./src/app/component/user/student-info/student-info.component.ts ***!
   \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -19,9 +19,9 @@ class UserInfoComponent {
     }
 }
 UserInfoComponent.ɵfac = function UserInfoComponent_Factory(t) { return new (t || UserInfoComponent)(); };
-UserInfoComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: UserInfoComponent, selectors: [["app-user-info"]], decls: 2, vars: 0, template: function UserInfoComponent_Template(rf, ctx) { if (rf & 1) {
+UserInfoComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: UserInfoComponent, selectors: [["app-student-info"]], decls: 2, vars: 0, template: function UserInfoComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "user-info works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "student-info works!");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c2VyLWluZm8uY29tcG9uZW50LnNjc3MifQ== */"] });
 
@@ -30,7 +30,7 @@ UserInfoComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0
 
 /***/ 5757:
 /*!*******************************************************************!*\
-  !*** ./src/app/component/user/user-login/user-login.component.ts ***!
+  !*** ./src/app/component/user/student-login/student-login.component.ts ***!
   \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -76,7 +76,7 @@ class UserLoginComponent {
     }
 }
 UserLoginComponent.ɵfac = function UserLoginComponent_Factory(t) { return new (t || UserLoginComponent)(); };
-UserLoginComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: UserLoginComponent, selectors: [["app-user-login"]], decls: 16, vars: 2, consts: [[1, "container"], ["nz-form", ""], [3, "nzPrefix"], ["type", "text", "nz-input", "", "formControlName", "userName", "placeholder", "\u5B66\u53F7"], ["userIcon", ""], ["type", "password", "nz-input", "", "formControlName", "password", "placeholder", "\u5BC6\u7801"], ["lockIcon", ""], ["nz-button", "", "nzType", "primary", 1, "login-form-margin"], ["nz-icon", ""], ["xmlns", "http://www.w3.org/2000/svg", "viewBox", "-5 -2 24 24", "width", "32", "fill", "currentColor"], ["d", "M3.534 10.07a1 1 0 1 1 .733 1.86A3.579 3.579 0 0 0 2 15.26V17a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1.647a3.658 3.658 0 0 0-2.356-3.419 1 1 0 1 1 .712-1.868A5.658 5.658 0 0 1 14 15.353V17a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3v-1.74a5.579 5.579 0 0 1 3.534-5.19zM7 0a4 4 0 0 1 4 4v2a4 4 0 1 1-8 0V4a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v2a2 2 0 1 0 4 0V4a2 2 0 0 0-2-2z"], ["xmlns", "http://www.w3.org/2000/svg", "viewBox", "-6 -2 24 24", "width", "32", "fill", "currentColor"], ["d", "M6 18a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 9.528V4a4 4 0 1 1 8 0v5.528a6 6 0 1 1-8 0zM4 8.34A5.99 5.99 0 0 1 6 8c.701 0 1.374.12 2 .341V4a2 2 0 1 0-4 0v4.341zM6 16a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"]], template: function UserLoginComponent_Template(rf, ctx) { if (rf & 1) {
+UserLoginComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: UserLoginComponent, selectors: [["app-student-login"]], decls: 16, vars: 2, consts: [[1, "container"], ["nz-form", ""], [3, "nzPrefix"], ["type", "text", "nz-input", "", "formControlName", "userName", "placeholder", "\u5B66\u53F7"], ["userIcon", ""], ["type", "password", "nz-input", "", "formControlName", "password", "placeholder", "\u5BC6\u7801"], ["lockIcon", ""], ["nz-button", "", "nzType", "primary", 1, "login-form-margin"], ["nz-icon", ""], ["xmlns", "http://www.w3.org/2000/svg", "viewBox", "-5 -2 24 24", "width", "32", "fill", "currentColor"], ["d", "M3.534 10.07a1 1 0 1 1 .733 1.86A3.579 3.579 0 0 0 2 15.26V17a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1.647a3.658 3.658 0 0 0-2.356-3.419 1 1 0 1 1 .712-1.868A5.658 5.658 0 0 1 14 15.353V17a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3v-1.74a5.579 5.579 0 0 1 3.534-5.19zM7 0a4 4 0 0 1 4 4v2a4 4 0 1 1-8 0V4a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v2a2 2 0 1 0 4 0V4a2 2 0 0 0-2-2z"], ["xmlns", "http://www.w3.org/2000/svg", "viewBox", "-6 -2 24 24", "width", "32", "fill", "currentColor"], ["d", "M6 18a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 9.528V4a4 4 0 1 1 8 0v5.528a6 6 0 1 1-8 0zM4 8.34A5.99 5.99 0 0 1 6 8c.701 0 1.374.12 2 .341V4a2 2 0 1 0-4 0v4.341zM6 16a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"]], template: function UserLoginComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "form", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "nz-form-item");
@@ -114,7 +114,7 @@ UserLoginComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_
 
 /***/ 1669:
 /*!****************************************************!*\
-  !*** ./src/app/module/user/user-routing.module.ts ***!
+  !*** ./src/app/module/user/student-routing.module.ts ***!
   \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -123,8 +123,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "UserRoutingModule": () => (/* binding */ UserRoutingModule)
 /* harmony export */ });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var src_app_component_user_user_info_user_info_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/component/user/user-info/user-info.component */ 1087);
-/* harmony import */ var src_app_component_user_user_login_user_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/component/user/user-login/user-login.component */ 5757);
+/* harmony import */ var src_app_component_user_user_info_user_info_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/component/user/student-info/student-info.component */ 1087);
+/* harmony import */ var src_app_component_user_user_login_user_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/component/user/student-login/student-login.component */ 5757);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
 
 
@@ -153,7 +153,7 @@ UserRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2
 
 /***/ 7340:
 /*!********************************************!*\
-  !*** ./src/app/module/user/user.module.ts ***!
+  !*** ./src/app/module/user/student.module.ts ***!
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -162,8 +162,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "UserModule": () => (/* binding */ UserModule)
 /* harmony export */ });
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var src_app_component_user_user_info_user_info_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/component/user/user-info/user-info.component */ 1087);
-/* harmony import */ var src_app_component_user_user_login_user_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/component/user/user-login/user-login.component */ 5757);
+/* harmony import */ var src_app_component_user_user_info_user_info_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/component/user/student-info/student-info.component */ 1087);
+/* harmony import */ var src_app_component_user_user_login_user_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/component/user/student-login/student-login.component */ 5757);
 /* harmony import */ var _user_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-routing.module */ 1669);
 /* harmony import */ var ng_zorro_antd_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ng-zorro-antd/button */ 5938);
 /* harmony import */ var ng_zorro_antd_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ng-zorro-antd/icon */ 5869);

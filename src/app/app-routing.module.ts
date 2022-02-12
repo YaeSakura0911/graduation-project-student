@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {AuthGuard} from "./guard/auth.guard";
 
 const routes: Routes = [
     {
         path: 'user',
-        loadChildren: () => import('./module/user/user.module').then(m => m.UserModule)
+        loadChildren: () => import('./module/user/student.module').then(m => m.StudentModule)
+    },
+    {
+        path: 'task',
+        canActivate: [AuthGuard],
+        loadChildren: () => import ('./module/task/task.module').then(m => m.TaskModule)
     },
     {
         path: '',
-        loadChildren: () => import ('./module/task/task.module').then(m => m.TaskModule)
+        redirectTo: '/user/login',
+        pathMatch: "full"
     }
 ];
 

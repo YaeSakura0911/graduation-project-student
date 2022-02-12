@@ -1,9 +1,9 @@
 <div class="container">
-    <form nz-form>
+    <form nz-form (ngSubmit)="loginStudent()" #loginStudentForm="ngForm">
         <nz-form-item>
-            <nz-form-control>
+            <nz-form-control nzHasFeedback nzErrorTip="学号不能为空">
                 <nz-input-group [nzPrefix]="userIcon">
-                    <input type="text" nz-input formControlName="userName" placeholder="学号" />
+                    <input type="text" name="studentNo" [(ngModel)]="studentNo" placeholder="学号" required nz-input />
                 </nz-input-group>
                 <ng-template #userIcon>
                     <i nz-icon>
@@ -17,9 +17,9 @@
             </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-            <nz-form-control>
+            <nz-form-control nzHasFeedback nzErrorTip="密码不能为空">
                 <nz-input-group [nzPrefix]="lockIcon">
-                    <input type="password" nz-input formControlName="password" placeholder="密码" />
+                    <input type="password" name="studentPassword" [(ngModel)]="studentPassword" placeholder="密码" required nz-input />
                 </nz-input-group>
                 <ng-template #lockIcon>
                     <i nz-icon>
@@ -32,6 +32,6 @@
                 </ng-template>
             </nz-form-control>
         </nz-form-item>
-        <button nz-button class="login-form-margin" nzType="primary">登录</button>
+        <button nz-button class="login-form-margin" nzType="primary" [disabled]="!loginStudentForm.form.valid">登录</button>
     </form>
 </div>
