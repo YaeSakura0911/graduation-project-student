@@ -1,7 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {QueryTaskCompleteListForm} from "../form/query-task-complete-list.form";
+import {QueryTaskCompleteListForm} from "../form/query-task-complete-list-form";
+import {UpdateTaskCompleteForm} from "../form/update-task-complete-form";
 
 @Injectable({providedIn:'root'})
 export class TaskService {
@@ -16,5 +17,9 @@ export class TaskService {
     // 查询作业完成列表
     queryTaskCompleteList(form: QueryTaskCompleteListForm): Observable<any> {
         return this.http.post("/task/complete/list", form);
+    }
+
+    updateTaskComplete(form: UpdateTaskCompleteForm): Observable<any> {
+        return this.http.put("/task/complete", form);
     }
 }

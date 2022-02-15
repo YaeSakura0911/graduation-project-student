@@ -14,6 +14,8 @@ import {NzTypographyModule} from 'ng-zorro-antd/typography';
 // 布局
 import {NzDividerModule} from 'ng-zorro-antd/divider';
 import {NzGridModule} from 'ng-zorro-antd/grid';
+// 导航
+import {NzPageHeaderModule} from 'ng-zorro-antd/page-header';
 // 数据录入
 import {NzFormModule} from 'ng-zorro-antd/form';
 import {NzInputModule} from 'ng-zorro-antd/input';
@@ -23,6 +25,9 @@ import {NzUploadModule} from 'ng-zorro-antd/upload';
 import {NzBadgeModule} from 'ng-zorro-antd/badge';
 import {NzDescriptionsModule} from 'ng-zorro-antd/descriptions';
 import {NzTableModule} from 'ng-zorro-antd/table';
+// 反馈
+import {NzMessageModule} from 'ng-zorro-antd/message';
+import {NzModalModule} from 'ng-zorro-antd/modal';
 
 @NgModule({
     declarations: [
@@ -38,13 +43,16 @@ import {NzTableModule} from 'ng-zorro-antd/table';
         NzTypographyModule,
         NzDividerModule,
         NzGridModule,
+        NzPageHeaderModule,
         NzFormModule,
         NzInputModule,
         NzSelectModule,
         NzUploadModule,
         NzBadgeModule,
         NzDescriptionsModule,
-        NzTableModule
+        NzTableModule,
+        NzMessageModule,
+        NzModalModule
     ]
 })
 

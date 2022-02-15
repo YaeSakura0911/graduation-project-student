@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageUtil} from "../../../util/storage.util";
 import {CompleteEntity} from "../../../entity/complete.entity";
-import {QueryTaskCompleteListForm} from "../../../form/query-task-complete-list.form";
+import {QueryTaskCompleteListForm} from "../../../form/query-task-complete-list-form";
 import {TaskService} from "../../../service/task.service";
 
 @Component({
