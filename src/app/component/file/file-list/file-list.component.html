@@ -1,1 +1,34 @@
-<p>file-list works!</p>
+<div class="container">
+    <!-- 菜单 -->
+    <div class="menu" [nzGutter]="16" nz-row>
+        <div [nzSpan]="4" nz-col>
+            <input placeholder="搜索你的文件" [(ngModel)]="fileName" (ngModelChange)="queryFileList()" nz-input/>
+        </div>
+    </div>
+
+    <!-- 表格 -->
+    <nz-table [nzData]="fileList" [nzFrontPagination]="false" #fileTable>
+        <thead>
+        <tr>
+            <th>文件名称</th>
+            <th>上传时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let file of fileTable.data">
+            <td>{{file.fileName}}</td>
+            <td>{{file.createTime | date: "yyyy-MM-dd HH:mm:ss"}}</td>
+            <td>
+                <a [href]="file.fileUrl" target="_blank" nz-typography>下载</a>
+            </td>
+        </tr>
+        </tbody>
+    </nz-table>
+
+    <br>
+
+    <!--  分页  -->
+    <nz-pagination [nzTotal]="total" [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" [nzShowSizeChanger]="true"
+                   (nzPageIndexChange)="queryFileList()" (nzPageSizeChange)="queryFileList()"></nz-pagination>
+</div>

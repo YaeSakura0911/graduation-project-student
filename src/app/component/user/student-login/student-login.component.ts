@@ -31,7 +31,11 @@ export class StudentLoginComponent {
         this.studentService.loginStudent(form).subscribe(response => {
             console.log("loginStudent", response);
             if (response.code == 200) {
-                this.storageUtil.set("auth", {studentId: response.body.studentId, studentName: response.body.studentName});
+                this.storageUtil.set("auth", {
+                    studentId: response.body.studentId,
+                    studentName: response.body.studentName,
+                    researchId: response.body.researchId
+                });
                 this.router.navigateByUrl("/task");
             }
         })
