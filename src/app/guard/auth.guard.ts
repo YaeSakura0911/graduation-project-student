@@ -14,10 +14,12 @@ export class AuthGuard implements CanActivate {
     canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-        console.log(this.storageUtil.get("auth"))
+        // 读取权限信息
         if (this.storageUtil.get("auth") == null) {
             this.router.navigateByUrl("/user/login");
         }
+        // 刷新保存时间
+        this.storageUtil.refreshTime("auth");
         return true;
     }
 

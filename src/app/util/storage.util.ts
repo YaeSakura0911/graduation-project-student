@@ -23,6 +23,16 @@ export class StorageUtil {
         }
     }
 
+    public refreshTime(key: string): void {
+        let data: string | null = localStorage.getItem(key);
+        let currentTime = new Date().getTime();
+        if (data != null) {
+            let jsonData = JSON.parse(data);
+            // 刷新时间
+            localStorage.setItem(key, JSON.stringify({data: jsonData.data, time: currentTime}));
+        }
+    }
+
     public remove(key: string): void {
         localStorage.removeItem(key);
     }

@@ -1,11 +1,13 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {QueryTaskCompleteListForm} from "../form/query-task-complete-list-form";
 import {UpdateTaskCompleteForm} from "../form/update-task-complete-form";
 
 @Injectable({providedIn:'root'})
 export class TaskService {
+
+    httpOptions = {headers: new HttpHeaders()};
 
     constructor(private http: HttpClient) {
     }
@@ -19,7 +21,7 @@ export class TaskService {
         return this.http.post("/task/complete/list", form);
     }
 
-    updateTaskComplete(form: UpdateTaskCompleteForm): Observable<any> {
-        return this.http.put("/task/complete", form);
+    updateTaskComplete(formData: FormData): Observable<any> {
+        return this.http.put("/task/complete", formData);
     }
 }

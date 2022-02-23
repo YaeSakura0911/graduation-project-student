@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import {TaskDetailComponent} from 'src/app/component/task/task-detail/task-detail.component';
 import {TaskListComponent} from 'src/app/component/task/task-list/task-list.component';
@@ -37,6 +37,7 @@ import {NzModalModule} from 'ng-zorro-antd/modal';
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         TaskRoutingModule,
         NzButtonModule,
         NzIconModule,

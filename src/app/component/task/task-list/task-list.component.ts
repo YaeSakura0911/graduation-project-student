@@ -3,6 +3,8 @@ import {StorageUtil} from "../../../util/storage.util";
 import {CompleteEntity} from "../../../entity/complete.entity";
 import {QueryTaskCompleteListForm} from "../../../form/query-task-complete-list-form";
 import {TaskService} from "../../../service/task.service";
+import {NavigationEnd, Router} from "@angular/router";
+import {filter, Observable} from "rxjs";
 
 @Component({
     selector: 'app-task-list',
@@ -23,7 +25,15 @@ export class TaskListComponent implements OnInit {
 
     constructor(
         private storageUtil: StorageUtil,
-        private taskService: TaskService) {
+        private taskService: TaskService,
+        private router: Router
+    ) {
+        // 监听路由变化
+        // (this.router.events.pipe(filter(event => event instanceof NavigationEnd)) as Observable<NavigationEnd>).subscribe(router => {
+        //     if (router.url == "/task") {
+        //         this.queryCompleteList();
+        //     }
+        // })
     }
 
     // 页面初始化

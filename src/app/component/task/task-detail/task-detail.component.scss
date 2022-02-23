@@ -1,25 +1,36 @@
-.menu {
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-
-    i {
-        font-size: 28px;
-        margin-right: 16px;
-        line-height: 28px;
+.container {
+    .menu {
+        padding: 0 24px;
         display: flex;
-        align-content: center
+        align-items: center;
+
+        i {
+            font-size: 28px;
+            margin-right: 16px;
+            line-height: 28px;
+            display: flex;
+            align-content: center
+        }
+
+        i :hover {
+            cursor: pointer;
+        }
     }
 
-    i :hover {
-        cursor: pointer;
+    nz-page-header {
+        padding: 0 24px;
+    }
+
+    .content {
+        width: 50%;
+        margin: 0 auto;
+
+        form {
+            width: 100%;
+        }
     }
 }
 
 h4 {
     margin: 0;
-}
-
-form {
-    width: 100%;
 }

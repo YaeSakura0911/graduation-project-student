@@ -1,21 +1,12 @@
 <div class="container">
-    <div class="menu" nz-row nzAlign="middle">
-        <div nz-col [nzSpan]="1">
-            <i (click)="toggleGoBackModalVisible()" nz-icon>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 24 24" width="32" fill="currentColor">
-                    <path
-                        d="M3.414 7.657l3.95 3.95A1 1 0 0 1 5.95 13.02L.293 7.364a.997.997 0 0 1 0-1.414L5.95.293a1 1 0 1 1 1.414 1.414l-3.95 3.95H13a1 1 0 0 1 0 2H3.414z">
-                    </path>
-                </svg>
-            </i>
-        </div>
-        <div nz-col [nzSpan]="4">
-            <h4 nz-typography>任务详情</h4>
-        </div>
-    </div>
+    <!-- 页头 -->
+    <nz-page-header [nzTitle]="taskName" (nzBack)="toggleGoBackModalVisible()" nzBackIcon></nz-page-header>
+
     <nz-divider></nz-divider>
-    <div style="width: 50%; margin: 0 auto;">
-        <nz-descriptions [nzColumn]="2" [nzTitle]="taskName">
+
+    <!-- 内容 -->
+    <div class="content">
+        <nz-descriptions [nzColumn]="2">
             <nz-descriptions-item nzTitle="截止时间">{{endTime | date: "yyyy-MM-dd HH:mm:ss"}}</nz-descriptions-item>
             <nz-descriptions-item nzTitle="任务状态">
                 <nz-badge *ngIf="completeState == 1" nzStatus="processing" nzText="进行中"></nz-badge>
@@ -28,32 +19,41 @@
         <form nz-form (ngSubmit)="updateTaskComplete()" #updateTaskCompleteForm="ngForm">
             <nz-form-item>
                 <nz-form-control nzErrorTip="内容不能为空">
-                    <textarea name="completeContent" [nzAutosize]="{ minRows: 6 }" [(ngModel)]="completeContent"
+                    <textarea name="completeContent" [nzAutosize]="{ minRows: 6 }"
+                              [disabled]="completeState == 2 || completeState == 4" [(ngModel)]="completeContent"
                               required nz-input></textarea>
                 </nz-form-control>
             </nz-form-item>
             <nz-form-item>
                 <nz-form-control>
-                    <nz-upload nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                               [nzHeaders]="{ authorization: 'authorization-text' }">
-                        <button nz-button>
-                            <i nz-icon nzType="upload"></i>
-                            点击上传
-                        </button>
+                    <nz-upload nzAction="/file/upload" nzType="drag" [nzBeforeUpload]="beforeUpload"
+                               [nzDisabled]="completeState == 2 || completeState == 4"
+                               [(nzFileList)]="fileList">
+                        <p class="ant-upload-drag-icon">
+                            <i nz-icon nzType="inbox"></i>
+                        </p>
+                        <p class="ant-upload-text" nz-typography>点击或拖拽文件到这里进行上传。</p>
+                        <p class="ant-upload-hint" nz-typography>
+                            只支持上传doc、docx、xls、xlsx、ppt、pptx、pdf、zip、jpg、jpeg、png格式的文件，且文件大小不超过10Mb
+                        </p>
                     </nz-upload>
                 </nz-form-control>
             </nz-form-item>
             <nz-form-item>
                 <nz-form-control>
-                    <button nzType="primary" [disabled]="completeId == 1 && !updateTaskCompleteForm.form.valid" nz-button>提交</button>
+                    <button nzType="primary"
+                            [disabled]="!((updateTaskCompleteForm.form.valid || fileList.length > 0) && (completeState == 1 || completeState == 3))"
+                            nz-button>提交
+                    </button>
                 </nz-form-control>
             </nz-form-item>
         </form>
     </div>
 </div>
 
-<nz-modal [(nzVisible)]="goBackModalVisible" nzTitle="返回上一页？" (nzOnCancel)="toggleGoBackModalVisible()" (nzOnOk)="goBack()">
+<nz-modal [(nzVisible)]="goBackModalVisible" nzTitle="返回上一页？" (nzOnCancel)="toggleGoBackModalVisible()"
+          (nzOnOk)="goBack()">
     <ng-container *nzModalContent>
-        <p nz-typography>离开将会清空所有内容！确认离开？</p>
+        <p nz-typography>确认离开？所有内容将会清空！</p>
     </ng-container>
 </nz-modal>

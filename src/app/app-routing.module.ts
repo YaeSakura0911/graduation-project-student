@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {AuthGuard} from "./guard/auth.guard";
 
 const routes: Routes = [
@@ -13,6 +13,11 @@ const routes: Routes = [
         loadChildren: () => import ('./module/task/task.module').then(m => m.TaskModule)
     },
     {
+        path: 'file',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./module/file/file.module').then(m => m.FileModule)
+    },
+    {
         path: '',
         redirectTo: '/user/login',
         pathMatch: "full"
@@ -23,4 +28,5 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
