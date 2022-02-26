@@ -1,0 +1,39 @@
+<div class="container">
+    <div nz-row class="menu" [nzGutter]="16">
+        <div nz-col [nzSpan]="4">
+            <input [(ngModel)]="noticeTitle" (ngModelChange)="queryNoticeList()" placeholder="搜索你的通知" nz-input/>
+        </div>
+        <div nz-col [nzSpan]="4">
+            <nz-select [(ngModel)]="noticePriority" (ngModelChange)="queryNoticeList()" nzPlaceHolder="按通知优先级筛选"
+                       nzAllowClear>
+                <nz-option [nzValue]="1" nzLabel="普通"></nz-option>
+                <nz-option [nzValue]="2" nzLabel="重要"></nz-option>
+                <nz-option [nzValue]="3" nzLabel="紧急"></nz-option>
+            </nz-select>
+        </div>
+    </div>
+
+    <div nz-row [nzGutter]="8">
+        <div *ngFor="let notice of noticeList" (click)="openNoticeDetailModal(notice.noticeId)" [nzSpan]="6" nz-col>
+            <nz-ribbon *ngIf="notice.readFlag == 0" nzText="新通知">
+                <nz-card nzHoverable>
+                    <h5 nzEllipsis nz-typography>
+                        <nz-badge *ngIf="notice.noticePriority == 1" nzColor="blue"></nz-badge>
+                        <nz-badge *ngIf="notice.noticePriority == 2" nzColor="orange"></nz-badge>
+                        <nz-badge *ngIf="notice.noticePriority == 3" nzColor="red"></nz-badge>
+                        {{notice.noticeTitle}}</h5>
+                    <p nzType="secondary" nz-typography>{{notice.releaseDate | date: "yyyy-MM-dd"}}</p>
+                </nz-card>
+            </nz-ribbon>
+            <nz-card *ngIf="notice.readFlag == 1" nzHoverable>
+                <h5 nzEllipsis nz-typography>{{notice.noticeTitle}}</h5>
+<!--                <p [nzEllipsisRows]="2" nzEllipsis nz-typography>{{notice.noticeContent}}</p>-->
+                <p nzType="secondary" nz-typography>
+
+                    {{notice.releaseDate | date: "yyyy-MM-dd"}}</p>
+            </nz-card>
+        </div>
+    </div>
+</div>
+
+<app-notice-detail (refreshPage)="queryNoticeList()" #noticeDetailModal></app-notice-detail>

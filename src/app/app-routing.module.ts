@@ -13,6 +13,11 @@ const routes: Routes = [
         loadChildren: () => import ('./module/task/task.module').then(m => m.TaskModule)
     },
     {
+        path: "notice",
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./module/notice/notice.module').then(m => m.NoticeModule)
+    },
+    {
         path: 'file',
         canActivate: [AuthGuard],
         loadChildren: () => import('./module/file/file.module').then(m => m.FileModule)

@@ -1,0 +1,17 @@
+<nz-modal nzTitle="通知详情" [(nzVisible)]="modalVisible" (nzOnCancel)="closeModal()">
+    <div *nzModalContent>
+        <nz-descriptions [nzTitle]="noticeTitle" [nzColumn]="1">
+            <nz-descriptions-item nzTitle="通知优先级">
+                <nz-badge *ngIf="noticePriority == 1" nzColor="blue" nzText="普通"></nz-badge>
+                <nz-badge *ngIf="noticePriority == 2" nzColor="orange" nzText="重要"></nz-badge>
+                <nz-badge *ngIf="noticePriority == 3" nzColor="red" nzText="紧急"></nz-badge>
+            </nz-descriptions-item>
+            <nz-descriptions-item nzTitle="发布日期">{{releaseDate | date: "yyyy-MM-dd"}}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="通知内容">{{noticeContent}}</nz-descriptions-item>
+        </nz-descriptions>
+    </div>
+    <div *nzModalFooter>
+        <button (click)="closeModal()" nz-button>取消</button>
+        <button nzType="primary" [disabled]="readFlag == 1" (click)="updateNotice()" nz-button>已读</button>
+    </div>
+</nz-modal>
